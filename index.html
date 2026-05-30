@@ -30,11 +30,9 @@
             <div class="section">
                 <label>1. Konsolun Beynini Seçin:</label>
                 <select id="beyin" required>
-                    <option value="487.5" data-fiyat="487.5">ESP32 (487.5 TL) - İyi</option>
-                    <option value="450" data-fiyat="450">Raspberry Pi Pico W (450 TL) - Orta</option>
-                    <option value="1350" data-fiyat="1350">Orange Pi Zero 3 (1350 TL) - Çok İyi</option>
-                    <option value="3450" data-fiyat="3450">Raspberry Pi 4 (3450 TL) - Mükemmel</option>
-                    <option value="255" data-fiyat="255">NodeMCU v3 (255 TL) - Kötü</option>
+                    <option value="320" data-fiyat="320">ESP32 Mikroişlemci (320 TL)</option>
+                    <option value="450" data-fiyat="450">Raspberry Pi Pico W (450 TL)</option>
+                    <option value="3450" data-fiyat="3450">Raspberry Pi 4 Canavar (3450 TL)</option>
                 </select>
             </div>
 
@@ -57,7 +55,17 @@
             </div>
 
             <div class="section">
-                <label>4. Ekstra Garanti Süresi:</label>
+                <label>4. SD Kart Hafıza Boyutu Seçin:</label>
+                <select id="sdKart" required>
+                    <option value="80" data-fiyat="80">32 GB Micro SD Kart (+80 TL)</option>
+                    <option value="130" data-fiyat="130">64 GB Micro SD Kart (+130 TL)</option>
+                    <option value="220" data-fiyat="220">128 GB Hızlı SD Kart (+220 TL)</option>
+                    <option value="400" data-fiyat="400">256 GB Canavar SD Kart (+400 TL)</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label>5. Ekstra Garanti Süresi:</label>
                 <select id="garanti" required>
                     <option value="0" data-fiyat="0">Garanti İstemiyorum (0 TL)</option>
                     <option value="150" data-fiyat="150">1 Yıl Ek Garanti (+150 TL)</option>
@@ -67,7 +75,7 @@
             </div>
 
             <div class="section checkbox-group">
-                <label style="display:block; margin-bottom:5px;">5. Konsolda Oynamak İstediğiniz Oyun Türleri (İstediğinizi Seçin):</label>
+                <label style="display:block; margin-bottom:5px;">6. Konsolda Oynamak İstediğiniz Oyun Türleri (İstediğinizi Seçin):</label>
                 <div class="checkbox-grid">
                     <label><input type="checkbox" name="tur" value="yaris"> Yarış</label>
                     <label><input type="checkbox" name="tur" value="acikdunya"> Açık Dünya</label>
@@ -83,7 +91,7 @@
             </div>
 
             <div class="section">
-                <label>6. Teslimat Bilgileri:</label>
+                <label>7. Teslimat Bilgileri:</label>
                 <input type="text" placeholder="Adınız ve Soyadınız" required style="margin-bottom: 10px;">
                 <input type="tel" placeholder="Telefon Numaranız (05xx...)" required style="margin-bottom: 10px;">
                 <input type="text" placeholder="Ev Adresiniz" required>
@@ -111,10 +119,12 @@
             let lehimfiyat = parseFloat(lehimSelect.options[lehimSelect.selectedIndex].getAttribute('data-fiyat'));
             let ekranSelect = document.getElementById('ekran');
             let ekranfiyat = parseFloat(ekranSelect.options[ekranSelect.selectedIndex].getAttribute('data-fiyat'));
+            let sdSelect = document.getElementById('sdKart');
+            let pdfiyat = parseFloat(sdSelect.options[sdSelect.selectedIndex].getAttribute('data-fiyat'));
             let garantiSelect = document.getElementById('garanti');
             let garantifiyat = parseFloat(garantiSelect.options[garantiSelect.selectedIndex].getAttribute('data-fiyat'));
             
-            let total = beyinfiyat + lehimfiyat + ekranfiyat + garantifiyat;
+            let total = beyinfiyat + lehimfiyat + ekranfiyat + pdfiyat + garantifiyat;
             document.getElementById('totalFiyat').innerText = total.toFixed(1);
         }
     </script>
