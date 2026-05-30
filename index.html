@@ -67,18 +67,18 @@
             </div>
 
             <div class="section checkbox-group">
-                <label style="display:block; margin-bottom:5px;">5. İçinde Yüklü Gelecek Minecraft Modları (İstediğini Seç):</label>
+                <label style="display:block; margin-bottom:5px;">5. Konsolda Oynamak İstediğiniz Oyun Türleri (İstediğinizi Seçin):</label>
                 <div class="checkbox-grid">
-                    <label><input type="checkbox" name="mod" value="yaris"> Yarış Modu</label>
-                    <label><input type="checkbox" name="mod" value="acikdunya"> Açık Dünya Modu</label>
-                    <label><input type="checkbox" name="mod" value="arackullanma"> Araç Kullanma Modu</label>
-                    <label><input type="checkbox" name="mod" value="cokoyunculu"> Çok Oyunculu Mod</label>
-                    <label><input type="checkbox" name="mod" value="otomobil"> Otomobil Simülasyonu Modu</label>
-                    <label><input type="checkbox" name="mod" value="simulasyon"> Simülasyon Modu</label>
-                    <label><input type="checkbox" name="mod" value="kesif"> Keşif Modu</label>
-                    <label><input type="checkbox" name="mod" value="gercekci"> Gerçekçi Grafik Modu</label>
-                    <label><input type="checkbox" name="mod" value="pvp"> PvP Savaş Modu</label>
-                    <label><input type="checkbox" name="mod" value="komik"> Komik / Sandbox Modu</label>
+                    <label><input type="checkbox" name="tur" value="yaris"> Yarış</label>
+                    <label><input type="checkbox" name="tur" value="acikdunya"> Açık Dünya</label>
+                    <label><input type="checkbox" name="tur" value="arackullanma"> Araç Kullanma</label>
+                    <label><input type="checkbox" name="tur" value="cokoyunculu"> Çok Oyunculu</label>
+                    <label><input type="checkbox" name="tur" value="otomobil"> Otomobil Simülasyonu</label>
+                    <label><input type="checkbox" name="tur" value="simulasyon"> Simülasyon</label>
+                    <label><input type="checkbox" name="tur" value="kesif"> Keşif</label>
+                    <label><input type="checkbox" name="tur" value="gercekci"> Gerçekçi</label>
+                    <label><input type="checkbox" name="tur" value="pvp"> PvP</label>
+                    <label><input type="checkbox" name="tur" value="komik"> Komik / Sandbox</label>
                 </div>
             </div>
 
@@ -111,12 +111,12 @@
             let lehimfiyat = parseFloat(lehimSelect.options[lehimSelect.selectedIndex].getAttribute('data-fiyat'));
             let ekranSelect = document.getElementById('ekran');
             let ekranfiyat = parseFloat(ekranSelect.options[ekranSelect.selectedIndex].getAttribute('data-fiyat'));
-            let永久 = document.getElementById('garanti');
-            let garantifiyat = parseFloat(永久.options[永久.selectedIndex].getAttribute('data-fiyat'));
+            let garantiSelect = document.getElementById('garanti');
+            let garantifiyat = parseFloat(garantiSelect.options[garantiSelect.selectedIndex].getAttribute('data-fiyat'));
             
             let total = beyinfiyat + lehimfiyat + ekranfiyat + garantifiyat;
             document.getElementById('totalFiyat').innerText = total.toFixed(1);
         }
     </script>
 </body>
-                      </html>
+</html>
