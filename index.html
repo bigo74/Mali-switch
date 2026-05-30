@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MALİ-SWITCH Tasarım Ekranı</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #ffffff; margin: 0; padding: 20px; text-align: center; }
+        .container { background-color: #1e1e1e; max-width: 600px; margin: 0 auto; padding: 30px; border-radius: 15px; box-shadow: 0px 0px 20px rgba(0,255,204,0.3); text-align: left; }
+        h1, h2 { color: #00ffcc; text-align: center; }
+        #ozelSelamlama { text-align: center; color: #121212; font-weight: bold; font-size: 1.2rem; margin-bottom: 20px; background: #00ffcc; padding: 8px; border-radius: 5px; display: none; box-shadow: 0px 0px 10px rgba(0,255,204,0.5); }
+        .section { margin-bottom: 25px; border-bottom: 1px solid #333; padding-bottom: 15px; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        select, input[type="number"], input[type="text"], input[type="tel"] { width: 100%; padding: 10px; background-color: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box; }
+        .checkbox-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .checkbox-group label { display: flex; align-items: center; background: #2a2a2a; padding: 8px; border-radius: 5px; cursor: pointer; font-size: 0.9rem; border: 1px solid #444; }
+        .checkbox-group input { margin-right: 10px; }
+        .total-box { background-color: #00ffcc; color: #121212; padding: 20px; border-radius: 10px; text-align: center; font-size: 1.5rem; font-weight: bold; margin-top: 20px; }
+        .btn { background-color: #ffffff; color: #121212; border: none; padding: 12px 25px; font-size: 1.1rem; font-weight: bold; cursor: pointer; border-radius: 5px; width: 100%; margin-top: 15px; transition: 0.3s; }
+        .btn:hover { background-color: #00ffcc; }
+    </style>
+</head>
+<body>
+    <h1>🎮 MALİ-SWITCH</h1>
+    <h2>Kendi Konsolunu Tasarla</h2>
+    <div id="ozelSelamlama"></div>
+
+    <div class="container">
+        <form id="konsolForm" oninput="hesaplaTotal()">
+            <div class="section">
+                <label>1. Konsolun Beynini Seçin:</label>
+                <select id="beyin" required>
+                    <option value="487.5" data-fiyat="487.5">ESP32 (487.5 TL) - İyi</option>
+                    <option value="450" data-fiyat="450">Raspberry Pi Pico W (450 TL) - Orta</option>
+                    <option value="1350" data-fiyat="1350">Orange Pi Zero 3 (1350 TL) - Çok İyi</option>
+                    <option value="3450" data-fiyat="3450">Raspberry Pi 4 (3450 TL) - Mükemmel</option>
+                    <option value="255" data-fiyat="255">NodeMCU v3 (255 TL) - Kötü</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label>2. Donanım Yapısı Seçin:</label>
+                <select id="lehimDurumu" required>
+                    <option value="200" data-fiyat="200">Lehimli Hazır Kurulum (+200 TL)</option>
+                    <option value="70" data-fiyat="70">Lehimsiz Demonte Paket (+70 TL)</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label>3. Ekran Büyüklüğü ve Özelliği:</label>
+                <select id="ekran" required>
+                    <option value="500" data-fiyat="500">5.0 İnç Standart Ekran (+500 TL)</option>
+                    <option value="850" data-fiyat="850">5.0 İnç Dokunmatik Ekran (+850 TL)</option>
+                    <option value="900" data-fiyat="900">7.0 İnç Dev Ekran (+900 TL)</option>
+                    <option value="1350" data-fiyat="1350">7.0 İnç Dev Dokunmatik Ekran (+1350 TL)</option>
+                </select>
+            </div>
+
+            <div class="section">
+                <label>4. Ekstra Garanti Süresi:</label>
+                <select id="garanti" required>
+                    <option value="0" data-fiyat="0">Garanti İstemiyorum (0 TL)</option>
+                    <option value="150" data-fiyat="150">1 Yıl Ek Garanti (+150 TL)</option>
+                    <option value="250" data-fiyat="250">2 Yıl Ek Garanti (+250 TL)</option>
+                    <option value="400" data-fiyat="400">3 Yıl Ek Garanti (+400 TL)</option>
+                </select>
+            </div>
+
+            <div class="section checkbox-group">
+                <label style="display:block; margin-bottom:5px;">5. İçinde Yüklü Gelecek Minecraft Modları (İstediğini Seç):</label>
+                <div class="checkbox-grid">
+                    <label><input type="checkbox" name="mod" value="yaris"> Yarış Modu</label>
+                    <label><input type="checkbox" name="mod" value="acikdunya"> Açık Dünya Modu</label>
+                    <label><input type="checkbox" name="mod" value="arackullanma"> Araç Kullanma Modu</label>
+                    <label><input type="checkbox" name="mod" value="cokoyunculu"> Çok Oyunculu Mod</label>
+                    <label><input type="checkbox" name="mod" value="otomobil"> Otomobil Simülasyonu Modu</label>
+                    <label><input type="checkbox" name="mod" value="simulasyon"> Simülasyon Modu</label>
+                    <label><input type="checkbox" name="mod" value="kesif"> Keşif Modu</label>
+                    <label><input type="checkbox" name="mod" value="gercekci"> Gerçekçi Grafik Modu</label>
+                    <label><input type="checkbox" name="mod" value="pvp"> PvP Savaş Modu</label>
+                    <label><input type="checkbox" name="mod" value="komik"> Komik / Sandbox Modu</label>
+                </div>
+            </div>
+
+            <div class="section">
+                <label>6. Teslimat Bilgileri:</label>
+                <input type="text" placeholder="Adınız ve Soyadınız" required style="margin-bottom: 10px;">
+                <input type="tel" placeholder="Telefon Numaranız (05xx...)" required style="margin-bottom: 10px;">
+                <input type="text" placeholder="Ev Adresiniz" required>
+            </div>
+
+            <div class="total-box">TOTAL TUTAR: <span id="totalFiyat">0</span> TL</div>
+            <button type="submit" class="btn" onclick="alert('Siparişiniz başarıyla alındı knk!')">Siparişi Tamamla</button>
+        </form>
+    </div>
+
+    <script>
+        window.onload = function() {
+            let yazi = prompt("Konsol açılış ekranında hangi yazı çıksın knk?");
+            if(yazi) {
+                let kutu = document.getElementById('ozelSelamlama');
+                kutu.innerText = "AÇILIŞ YAZISI: " + yazi.toUpperCase();
+                kutu.style.display = "block";
+            }
+            hesaplaTotal();
+        };
+        function hesaplaTotal() {
+            let beyinSelect = document.getElementById('beyin');
+            let beyinfiyat = parseFloat(beyinSelect.options[beyinSelect.selectedIndex].getAttribute('data-fiyat'));
+            let lehimSelect = document.getElementById('lehimDurumu');
+            let lehimfiyat = parseFloat(lehimSelect.options[lehimSelect.selectedIndex].getAttribute('data-fiyat'));
+            let ekranSelect = document.getElementById('ekran');
+            let ekranfiyat = parseFloat(ekranSelect.options[ekranSelect.selectedIndex].getAttribute('data-fiyat'));
+            let永久 = document.getElementById('garanti');
+            let garantifiyat = parseFloat(永久.options[永久.selectedIndex].getAttribute('data-fiyat'));
+            
+            let total = beyinfiyat + lehimfiyat + ekranfiyat + garantifiyat;
+            document.getElementById('totalFiyat').innerText = total.toFixed(1);
+        }
+    </script>
+</body>
+                      </html>
