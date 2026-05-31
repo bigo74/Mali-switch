@@ -30,58 +30,58 @@
             <div class="section">
                 <label>1. Konsolun Beynini Seçin:</label>
                 <select id="beyin" required>
-                    <option value="320" data-fiyat="320">ESP32 Mikroişlemci (320 TL)</option>
-                    <option value="450" data-fiyat="450">Raspberry Pi Pico W (450 TL)</option>
-                    <option value="3450" data-fiyat="3450">Raspberry Pi 4 Canavar (3450 TL)</option>
+                    <option value="320">ESP32 Mikroişlemci (320 TL)</option>
+                    <option value="450">Raspberry Pi Pico W (450 TL)</option>
+                    <option value="3450">Raspberry Pi 4 Canavar (3450 TL)</option>
                 </select>
             </div>
 
             <div class="section">
                 <label>2. Donanım Yapısı Seçin:</label>
                 <select id="lehimDurumu" required>
-                    <option value="200" data-fiyat="200">Lehimli Hazır Kurulum (+200 TL)</option>
-                    <option value="70" data-fiyat="70">Lehimsiz Demonte Paket (+70 TL)</option>
+                    <option value="200">Lehimli Hazır Kurulum (+200 TL)</option>
+                    <option value="70">Lehimsiz Demonte Paket (+70 TL)</option>
                 </select>
             </div>
 
             <div class="section">
                 <label>3. Ekran Büyüklüğü ve Özelliği:</label>
                 <select id="ekran" required>
-                    <option value="500" data-fiyat="500">5.0 İnç Standart Ekran (+500 TL)</option>
-                    <option value="850" data-fiyat="850">5.0 İnç Dokunmatik Ekran (+850 TL)</option>
-                    <option value="900" data-fiyat="900">7.0 İnç Dev Ekran (+900 TL)</option>
-                    <option value="1350" data-fiyat="1350">7.0 İnç Dev Dokunmatik Ekran (+1350 TL)</option>
+                    <option value="500">5.0 İnç Standart Ekran (+500 TL)</option>
+                    <option value="850">5.0 İnç Dokunmatik Ekran (+850 TL)</option>
+                    <option value="900">7.0 İnç Dev Ekran (+900 TL)</option>
+                    <option value="1350">7.0 İnç Dev Dokunmatik Ekran (+1350 TL)</option>
                 </select>
             </div>
 
             <div class="section">
-                <label>4. SD Kart Hafıza Boyutu Seçin:</label>
+                <label>4. SD Kart Hafıza Boyutu:</label>
                 <select id="sdKart" required>
-                    <option value="80" data-fiyat="80">32 GB Micro SD Kart (+80 TL)</option>
-                    <option value="130" data-fiyat="130">64 GB Micro SD Kart (+130 TL)</option>
-                    <option value="220" data-fiyat="220">128 GB Hızlı SD Kart (+220 TL)</option>
-                    <option value="400" data-fiyat="400">256 GB Canavar SD Kart (+400 TL)</option>
+                    <option value="80">32 GB Micro SD Kart (+80 TL)</option>
+                    <option value="130">64 GB Micro SD Kart (+130 TL)</option>
+                    <option value="220">128 GB Hızlı SD Kart (+220 TL)</option>
+                    <option value="400">256 GB Canavar SD Kart (+400 TL)</option>
                 </select>
             </div>
 
             <div class="section">
                 <label>5. Ekstra Garanti Süresi:</label>
                 <select id="garanti" required>
-                    <option value="0" data-fiyat="0">Garanti İstemiyorum (0 TL)</option>
-                    <option value="150" data-fiyat="150">1 Yıl Ek Garanti (+150 TL)</option>
-                    <option value="250" data-fiyat="250">2 Yıl Ek Garanti (+250 TL)</option>
-                    <option value="400" data-fiyat="400">3 Yıl Ek Garanti (+400 TL)</option>
+                    <option value="0">Garanti İstemiyorum (0 TL)</option>
+                    <option value="150">1 Yıl Ek Garanti (+150 TL)</option>
+                    <option value="250">2 Yıl Ek Garanti (+250 TL)</option>
+                    <option value="400">3 Yıl Ek Garanti (+400 TL)</option>
                 </select>
             </div>
 
             <div class="section checkbox-group">
-                <label style="display:block; margin-bottom:5px;">6. Konsolda Oynamak İstediğiniz Oyun Türleri (İstediğinizi Seçin):</label>
+                <label style="display:block; margin-bottom:5px;">6. Konsolda Oynamak İstediğiniz Oyun Türleri:</label>
                 <div class="checkbox-grid">
                     <label><input type="checkbox" name="tur" value="yaris"> Yarış</label>
                     <label><input type="checkbox" name="tur" value="acikdunya"> Açık Dünya</label>
                     <label><input type="checkbox" name="tur" value="arackullanma"> Araç Kullanma</label>
-                    <label><input type="checkbox" name="tur" value="cokoyunculu"> Çok Oyunculu</label>
-                    <label><input type="checkbox" name="tur" value="otomobil"> Otomobil Simülasyonu</label>
+                    <label><input type="checkbox" name="tur" value="cokoyunculu"> Çok Oyuncu</label>
+                    <label><input type="checkbox" name="tur" value="otomobil"> Otomobil Sim.</label>
                     <label><input type="checkbox" name="tur" value="simulasyon"> Simülasyon</label>
                     <label><input type="checkbox" name="tur" value="kesif"> Keşif</label>
                     <label><input type="checkbox" name="tur" value="gercekci"> Gerçekçi</label>
@@ -92,13 +92,13 @@
 
             <div class="section">
                 <label>7. Teslimat Bilgileri:</label>
-                <input type="text" placeholder="Adınız ve Soyadınız" required style="margin-bottom: 10px;">
-                <input type="tel" placeholder="Telefon Numaranız (05xx...)" required style="margin-bottom: 10px;">
-                <input type="text" placeholder="Ev Adresiniz" required>
+                <input type="text" placeholder="Ad Soyad" required style="margin-bottom: 10px;">
+                <input type="tel" placeholder="Telefon (05xx...)" required style="margin-bottom: 10px;">
+                <input type="text" placeholder="Adres" required>
             </div>
 
             <div class="total-box">TOTAL TUTAR: <span id="totalFiyat">0</span> TL</div>
-            <button type="submit" class="btn" onclick="alert('Siparişiniz başarıyla alındı knk!')">Siparişi Tamamla</button>
+            <button type="submit" class="btn" onclick="alert('Siparişiniz alındı knk!')">Siparişi Tamamla</button>
         </form>
     </div>
 
@@ -113,18 +113,13 @@
             hesaplaTotal();
         };
         function hesaplaTotal() {
-            let beyinSelect = document.getElementById('beyin');
-            let beyinfiyat = parseFloat(beyinSelect.options[beyinSelect.selectedIndex].getAttribute('data-fiyat'));
-            let lehimSelect = document.getElementById('lehimDurumu');
-            let lehimfiyat = parseFloat(lehimSelect.options[lehimSelect.selectedIndex].getAttribute('data-fiyat'));
-            let ekranSelect = document.getElementById('ekran');
-            let ekranfiyat = parseFloat(ekranSelect.options[ekranSelect.selectedIndex].getAttribute('data-fiyat'));
-            let sdSelect = document.getElementById('sdKart');
-            let pdfiyat = parseFloat(sdSelect.options[sdSelect.selectedIndex].getAttribute('data-fiyat'));
-            let garantiSelect = document.getElementById('garanti');
-            let garantifiyat = parseFloat(garantiSelect.options[garantiSelect.selectedIndex].getAttribute('data-fiyat'));
+            let beyinFiyat = parseFloat(document.getElementById('beyin').value) || 0;
+            let lehimFiyat = parseFloat(document.getElementById('lehimDurumu').value) || 0;
+            let ekranFiyat = parseFloat(document.getElementById('ekran').value) || 0;
+            let sdFiyat = parseFloat(document.getElementById('sdKart').value) || 0;
+            let garantiFiyat = parseFloat(document.getElementById('garanti').value) || 0;
             
-            let total = beyinfiyat + lehimfiyat + ekranfiyat + pdfiyat + garantifiyat;
+            let total = beyinFiyat + lehimFiyat + ekranFiyat + sdFiyat + garantiFiyat;
             document.getElementById('totalFiyat').innerText = total.toFixed(1);
         }
     </script>
